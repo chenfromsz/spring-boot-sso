@@ -1,0 +1,36 @@
+server:
+  port: 8082
+  tomcat:
+    uri-encoding: UTF-8
+
+security:
+  ignored: /favicon.ico,/scripts/**,/styles/**,/images/**
+  sessions: ALWAYS
+  oauth2:
+      sso:
+        loginPath: /login
+      client:
+        clientId: ssoclient
+        clientSecret: ssosecret
+        accessTokenUri: http://localhost/oauth/token
+        userAuthorizationUri: http://localhost/oauth/authorize
+        clientAuthenticationScheme: form
+      resource:
+        jwt:
+          keyUri: http://localhost/oauth/token_key
+
+securityconfig:
+  logoutsuccssurl: /tosignout
+  permitall: /rest/**,/re**
+  deniedpage: /deny
+  urlroles: /**/new/** = admin;
+            /**/edit/** = admin,editor;
+            /**/delete/** = admin
+
+zuul:
+  routes:
+    resource:
+      path: /resource/**
+      url: http://localhost:8083
+      stripPrefix: true
+      retryable:

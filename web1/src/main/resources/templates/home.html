@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store"/>
+    <meta http-equiv="Expires" content="0" />
+
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+    <title >首页</title>
+    <link th:href="@{/styles/global.css}"  rel="stylesheet" type="text/css"/>
+    <link th:href="@{/styles/home.css}" rel="stylesheet"  type="text/css"/>
+
+    <script th:src="@{/scripts/jquery.min.js}"></script>
+    <script th:src="@{/scripts/common.js}"></script>
+    <script th:src="@{/scripts/public/public.js}"></script>
+    <script th:src="@{/scripts/public/json2.js}"></script>
+
+</head>
+<body>
+<div class="headerBox">
+    <div class="topBox">
+        <div class="topLogo f-left">
+            <a href="#"><img th:src="@{/images/logo.png}"/></a>
+        </div>
+        <div class="topUserInf f-right">
+            <span>欢迎您，<em th:text="${user.name}">用户（name）</em>！</span>
+            <a href="javascript:void(0)" id="logout">[退出]</a>
+        </div>
+    </div>
+
+</div>
+<div class="locationLine">
+    当前位置：首页
+</div>
+<table class="globalMainBox" style="position:relative;z-index:1">
+    <tr>
+        <td valign="top">
+            <div class="content">
+                <div class="newsApp">
+                    <div id="focus">
+                        <ul>
+                            <li>
+                                <div class="icon-box">
+                                    <div class="new-icon">
+                                        <div class="icon-pic">
+                                            <p><a href="/manage/user/index" class="linka"  ><img src="/images/home/BigIconFirm.png" /></a></p>
+                                        </div>
+                                        <div class="icon-txt">
+                                            <dl>
+                                                <dt>
+                                                <p><a href="/user/index" class="linka" >Web1系统</a></p>
+                                                <span><img src="/images/home/FourStar.jpg" /></span>
+                                                </dt>
+                                                <dd>
+                                                    <a href="/user/index" class="linka" >Web1系统平台</a>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+
+                                    <div class="new-icon">
+                                        <div class="icon-pic">
+                                            <p><a href="http://localhost:8082/" class="linka"  ><img src="/images/home/BigIconFirm.png" /></a></p>
+                                        </div>
+                                        <div class="icon-txt">
+                                            <dl>
+                                                <dt>
+                                                <p><a href="http://localhost:8082" class="linka" >Web2系统</a></p>
+                                                <span><img src="/images/home/FourStar.jpg" /></span>
+                                                </dt>
+                                                <dd>
+                                                    <a href="###" class="linka" >Web2后台管理</a>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<form th:action="@{/logout}" method="post" id="logoutform">
+</form>
+<div class="footBox" th:replace="fragments/footer :: footer"></div>
+<script type="text/javascript">
+    $(function () {
+        $("#logout").click(function () {
+            if (confirm('您确定退出吗？')) {
+                $("#logoutform").submit();
+            }
+        });
+    });
+</script>
+</body>
+</html>

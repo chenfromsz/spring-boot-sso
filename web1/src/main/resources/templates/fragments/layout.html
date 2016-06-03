@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store"/>
+    <meta http-equiv="Expires" content="0" />
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+    <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">Web1</title>
+    <link th:href="@{/styles/global.css}"  rel="stylesheet" type="text/css"/>
+    <link th:href="@{/styles/index.css}" rel="stylesheet"  type="text/css"/>
+    <script th:src="@{/scripts/jquery.min.js}"></script>
+    <script th:src="@{/scripts/artDialog/artDialog.js}" />
+    <script th:src="@{/scripts/common.js}"></script>
+    <script th:src="@{/scripts/public/public.js}"></script>
+    <script th:src="@{/scripts/public/json2.js}"></script>
+    <script type="text/javascript" th:src="@{/scripts/validate/jquery.validate.min.js}"></script>
+	<script type="text/javascript" th:src="@{/scripts/validate/chinese.js}"></script>
+</head>
+<body>
+<div class="headerBox">
+    <div class="topBox">
+        <div class="topLogo f-left">
+            <a href="#"><img th:src="@{/images/logo.png}"/></a>
+        </div>
+        <div class="topUserInf f-right">
+            <span>欢迎您，<em th:text="${user.name}">用户</em>！</span>
+            <a href="javascript:void(0)" id="logout">[退出]</a>
+        </div>
+        <div class="new-nav f-right">
+            <ul>
+                <li><a href="/">首页</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="locationLine" layout:fragment="prompt">
+    当前位置：首页 &gt; <em>页面</em>
+</div>
+<table class="globalMainBox" style="position:relative;z-index:1">
+    <tr>
+        <td class="columnLeftBox" valign="top">
+            <div th:replace="fragments/nav :: nav"></div>
+        </td>
+        <td class="whiteSpace"></td>
+        <td class="rightColumnBox" valign="top">
+            <div layout:fragment="content"></div>
+        </td>
+    </tr>
+</table>
+<form th:action="@{/logout}" method="post" id="logoutform">
+</form>
+<div class="footBox" th:replace="fragments/footer :: footer"></div>
+<script type="text/javascript">
+    $(function () {
+        $("#logout").click(function () {
+            if (confirm('您确定退出吗？')) {
+                $("#logoutform").submit();
+            }
+        });
+    });
+</script>
+</body>
+</html>

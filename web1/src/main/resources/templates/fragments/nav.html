@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div th:fragment="nav">
+
+    <div class="columnLeftMenu">
+
+        <h6 ><span class="f-right"></span>系统管理</h6>
+        <ul >
+            <li><a th:classappend="${page == 'department/index' ? 'currentPageNav' : ''}" th:href="@{/department/index}">部门管理</a></li>
+            <li><a th:classappend="${page == 'role/index' ? 'currentPageNav' : ''}" th:href="@{/role/index}">角色管理</a></li>
+            <li><a th:classappend="${page == 'user/index' ? 'currentPageNav' : ''}" th:href="@{/user/index}">用户管理</a></li>
+        </ul>
+
+    </div>
+</div>
+</body>
+</html>

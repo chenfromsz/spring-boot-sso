@@ -1,0 +1,40 @@
+<div class="addInfBtn">
+    <h3 class="itemTit"><span>用户信息</span></h3>
+    <table class="addNewInfList">
+        <tr>
+            <th>名称</th>
+            <td width="240"><input class="inp-list w-200 clear-mr f-left" type="text" th:value="${user.name}" readonly="true"/></td>
+            <th>邮箱</th>
+            <td><input class="inp-list w-200 clear-mr f-left" type="text" th:value="${user.email}" readonly="true" /></td>
+        </tr>
+        <tr>
+            <th>部门</th>
+            <td width="240">
+                <input class="inp-list w-200 clear-mr f-left" type="text" th:value="${user.department.name}" readonly="true"/>
+            </td>
+            <th>性别</th>
+            <td>
+                <input class="inp-list w-200 clear-mr f-left" type="text" th:if="${user.sex==0}" th:value="男" readonly="true"/>
+                <input class="inp-list w-200 clear-mr f-left" type="text" th:if="${user.sex==1}" th:value="女" readonly="true"/>
+            </td>
+        </tr>
+        <tr>
+            <th>角色</th>
+            <td>
+                <select name="roles" id="roles" multiple="multiple" readonly="true">
+                    <option th:each="role:${user.roles}"
+                            th:text="${#strings.length(role.name)>20?#strings.substring(role.name,0,20)+'...':role.name}"
+                            th:selected="true"
+                            ></option>
+                </select>
+            </td>
+            <th>日期</th>
+            <td>
+                <input  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" type="text" class="inp-list w-200 clear-mr f-left" th:value="${user.createdate} ? ${#dates.format(user.createdate,'yyyy-MM-dd HH:mm:ss')} :''" readonly="true"/>
+            </td>
+        </tr>
+    </table>
+    <div class="bottomBtnBox">
+        <a class="btn-93X38 backBtn" href="javascript:closeDialog(0)">返回</a>
+    </div>
+</div>

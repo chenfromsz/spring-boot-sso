@@ -1,0 +1,101 @@
+@charset "utf-8";
+/* CSS Document */
+html,body {margin:0px;height:100%; background:#FFF;}
+*html{background-image:url(about:blank);background-attachment:fixed;}
+img {border:0}
+a{ text-decoration: none; color:#666; outline:none;}
+a:hover{text-decoration:none; color:#fe9500; outline:none;}
+body{font-family:"microsoft yahei";font-size:12px;line-height: 20px; color:#666;}
+select,input{font-size: 12px;font-family:"microsoft yahei"; padding:0; margin:0; outline:none;}
+ul,li,dl,dt,dd,h1,h2,h3,h4,h5,p,form,em,span{ margin:0; padding:0; list-style:none}
+table{ border:0; padding:0; margin:0;}
+em{ font-style:normal}
+
+/*婢舵挳鍎�*/
+.new-header { overflow:hidden; width:100%; height:90px; border-bottom:2px solid #d7d7d7; padding-top:3px;}
+.new-top { width:1000px; height:90px; overflow:hidden; margin:0 auto;}
+.new-top .new-logo { float:left; width:308px; height:60px; margin-top:16px; text-align:right; overflow:hidden;}
+.new-top .new-tips { float:right; width:692px; height:30px; line-height:30px; margin-top:15px; overflow:hidden; text-align:right; font-size:12px; color:#999;}
+.new-top .new-tips a {color:#999;}
+.new-top .new-tips a:hover{color:#fe9500;}
+.new-top .new-tips font { color:#ee7f1f; font-size:12px;}
+.new-top .new-tips span { padding-right:15px;}
+.new-top .new-nav { float:right;  height:28px; line-height:28px; overflow:hidden; margin-top:3px;}
+.new-top .new-nav li { float:left; height:28px; overflow:hidden; width:82px; padding-left:10px; text-align:center; font-size:16px;}
+.new-top .new-nav li a { float:left; width:82px; height:28px; overflow:hidden; color:#3f3f3f;}
+.new-top .new-nav li a:hover{ float:left; width:82px; height:28px; overflow:hidden; color:#fff; background:url(../images/home/nav-a-hover.jpg) no-repeat;}
+.nav-a{ background:url(../images/home/nav-a-hover.jpg) no-repeat; color:#FFF !important;}
+
+/*content*/
+
+.bannerBox{ width:1008px; height:296px; margin:0 auto; padding-top:16px; overflow:hidden;}
+.bannerPic{ float:left; width:690px; height:284px; overflow:hidden; margin:4px 0 0 4px; display:inline; border:1px solid #f3f3f3;}
+#billing {width:690px; height:284px; position:relative; overflow:hidden; z-index:2;}
+#billing ul {height:284px; position:absolute;}
+#billing ul li {float:left; width:690px; height:284px; overflow:hidden; position:relative;}
+#billing .bilBg {position:absolute; width:690px; height:20px; left:0; bottom:0; }
+#billing .bilbtn {position:absolute; width:690px; height:10px; padding:5px 10px; right:0; bottom:5px; text-align:center; }
+#billing .bilbtn span {display:inline-block; _display:inline; _zoom:1; width:25px; height:6px; _font-size:0; margin-left:5px; cursor:pointer; background:url(../images/home/bilon.png) no-repeat;}
+
+
+.microBox{ float:right;width:254px; height:228px; background:url(../images/home/microBoxbg.jpg) no-repeat; overflow:hidden; padding:27px 26px 41px 20px;}
+.microBox dt { float:left; width:254px; overflow:hidden; height:90px;}
+.microBox dd { float:left; width:254px; overflow:hidden; height:138px;}
+.microBox dd span{float:left; width:254px; line-height:24px; padding:17px 0; height:48px; font-size:16px; color:#5a5a5a;}
+.microBox dd p{ float:left; width:254px; overflow:hidden; height:51px;}
+.microBox dd p input { float:left; width:254px; height:51px; border:0; cursor:pointer; background:url(../images/home/qutama.png) no-repeat;}
+.microBox dd ul { float:left; width:248px; overflow:hidden; height:110px; padding:13px 3px 0 3px;}
+.microBox dd ul li { float:left; overflow:hidden; width:172px; height:48px; margin-top:7px; background:url(../images/home/microBoxLi.png) no-repeat; padding-left:76px;}
+.microBox dd ul li font{ font-size:30px; color:#f47400; height:48px; line-height:48px; float:left; font-family:Arial;}
+.microBox dd ul li em { float:left; padding-left:10px; height:30px; margin-top:12px; line-height:30px; font-size:14px; color:#8b8b8b;}
+
+.content { overflow:hidden; margin:0 auto; width:1000px;}
+
+.txtTitle { float:left; width:100%; overflow:hidden; padding:20px 0 15px 0; height:23px;}
+.txtTitle  span { float:left; height:23px; line-height:23px; border-left:4px solid #fbb800; padding-left:12px; color:#343434; font-size:20px;}
+.newsApp{ float:left; overflow:hidden; background:#f5f5f5; padding:0 8px 5px 8px;}
+#focus {width:984px; height:370px; position:relative; overflow:hidden; z-index:2;}
+#focus ul {height:356px; position:absolute;}
+#focus ul li {float:left; width:984px; height:334px; overflow:hidden; position:relative;}
+#focus .btnBg {position:absolute; width:984px; height:20px; left:0; bottom:0; }
+#focus .btn {position:absolute; width:984px; height:10px; padding:5px 10px; right:0; bottom:5px; text-align:center; }
+#focus .btn span {display:inline-block; _display:inline; _zoom:1; width:10px; height:10px; _font-size:0; margin-left:5px; cursor:pointer; background:url(../images/home/point.png) no-repeat;}
+#focus .btn span.on { background:url(../images/home/cur.png) no-repeat !important;}
+
+.icon-box { float:left; width:984px;overflow:hidden; height:334px;}
+.new-icon{ float:left; margin:16px 8px 0 8px; width:312px; height:151px; overflow:hidden; display:inline; background:#fff;}
+.new-icon .icon-pic { float:left; overflow:hidden; position:relative;width:92px; height:92px; padding:5px 5px 0 1px; margin:25px 0 0 30px; display:inline;}
+.new-icon .icon-pic p { float:left; width:92px; height:92px;}
+.new-icon .icon-pic p img { float:left;width:92px; height:92px; border:0;}
+.new-icon .icon-pic span { float:left; width:57px; height:58px; overflow:hidden; position:absolute; right:0; top:0; z-index:99;}
+
+.new-icon .icon-txt { float:left; width:150px; overflow:hidden; height:92px; padding-left:17px;  margin-top:30px;}
+.new-icon .icon-txt dt { float:left; width:150px; overflow:hidden; height:38px;  color:#3a3a3a; font-size:16px;}
+.new-icon .icon-txt dt p { float:left; width:150px; height:22px; overflow:hidden; line-height:22px;}
+.new-icon .icon-txt dt span { float:left; width:150px; height:16px; overflow:hidden;}
+.new-icon .icon-txt dt a { color:#3a3a3a;}
+.new-icon .icon-txt dt a:hover{color:#fe9500;}
+.new-icon .icon-txt dd { float:left; width:150px; height:54px; overflow:hidden; line-height:18px; font-size:14px; color:#777;}
+.new-icon .icon-txt dd a {color:#777;}
+.new-icon .icon-txt dd a:hover{color:#fe9500;}
+
+
+.BasisBox{ float:left; width:100%; overflow:hidden; padding:25px 0; background:url(../images/home/Basistopbg.jpg) left top repeat-x #f9f9f9;}
+.BasisBox ul { width:1000px; overflow:hidden; margin:0 auto; height:150px;}
+.BasisBox ul li { float:left; width:500px; height:150px; overflow:hidden;}
+.Basislist{ float:left; width:388px; overflow:hidden; padding:0 56px; height:150px;}
+.Basislist p { float:left; height:130px; width:107px; overflow:hidden;}
+.Basislist dl{ float:left; width:281px; overflow:hidden;}
+.Basislist dt { float:left; padding:6px 15px 2px 15px; width:251px; height:40px; background:url(../images/home/Basisdt.jpg) left bottom repeat-x; font-size:18px; line-height:40px;}
+.Basislist dt  a { color:#585858 }
+.Basislist dt  a:hover{ color:#fe9500 }
+.Basislist dd { float:left; padding:6px 15px 0 15px; overflow:hidden; height:96px; line-height:24px; color:#949494; font-size:16px;}
+.Basislist dd  a { color:#949494 }
+.Basislist dd  a:hover{ color:#fe9500 }
+.Basisbg{ background:url(../images/home/Bigbg.png) top right no-repeat;}
+
+/*鐏忛箖鍎�*/
+.new-footber { float:left; width:100%; overflow:hidden; height:40px; padding:44px 0 70px 0; background:url(../images/home/footbg.jpg) top left repeat-x #efefef;}
+.new-footber li { float:left; width:100%; height:20px; line-height:20px; overflow:hidden; font-size:12px; text-align:center; color:#999;}
+.new-footber li a { padding:0 6px; }
+.new-footber li strong { font-family:Arial;}

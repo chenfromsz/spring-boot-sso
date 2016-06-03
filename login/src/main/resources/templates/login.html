@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store"/>
+    <meta http-equiv="Expires" content="0" />
+    <meta charset="utf-8" />
+
+    <title>用户登录</title>
+    <link th:href="@{/styles/login.css}" rel="stylesheet" type="text/css"/>
+    <script th:src="@{/scripts/jquery.min.js}"></script>
+    <script th:src="@{/scripts/login.js}"></script>
+</head>
+<body>
+<div class="mainBox">
+    <div></div>
+    <div class="leftBox">
+        <div></div>
+        <div class="loginBoxTop png"></div>
+        <div class="loginBox png">
+            <div th:if="${param.error}">
+                <input th:value="无效的用户或密码！" id="errorMsg" type="hidden"/>
+            </div>
+            <div th:if="${param.logout}">
+                <input th:value="你已经退出！" id="errorMsg" type="hidden"/>
+            </div>
+            <div th:if="${#httpServletRequest.remoteUser != null}">
+                <input th:value="${#httpServletRequest.remoteUser}" id="errorMsg" type="hidden"/>
+            </div>
+            <form th:action="@{/login}" id="loginForm" method="post">
+                <div class="loginTit png"></div>
+                <ul class="infList">
+                    <li class="grayBox">
+                        <label for="username" class="username-icon"></label>
+                        <input id="username" class="username" name="username" type="text" placeholder="您的用户名"/>
+                        <div class="close png hide"></div>
+                    </li>
+                    <li class="grayBox">
+                        <label class="pwd-icon" id="pwd"></label>
+                        <input id="password" name="password" class="pwd" type="password" placeholder="登录密码"/>
+                        <div class="close png hide"></div>
+                    </li>
+                    <li class="">
+                        <label class="validateLabel" ></label>
+                        <input id="checkCode" name="checkCode" class="checkCode" type="text" placeholder="验证码" />
+                        <img onclick="reloadImg();" style="cursor: pointer" th:src="@{/images/imagecode}" id="validateImg" alt="验证码" class="codePic" title="验证码。点击此处更新验证码。"/>
+                        <a class="getOther" href="javascript:void(0);" onclick="reloadImg();" title="点击此处可以更新验证码。">更新</a>
+                    </li>
+                </ul>
+                <ul class="infList reloadBtn" style="display: none;">
+                    <li>
+                        <a href="javascript:void(0);" onclick="tologin();">本页面已经失效。请点击此处重新登录。</a>
+                    </li>
+                </ul>
+                <div class="loginBtnBox">
+                    <div class="check-box"><input type="hidden" value="0" id="remember-me" name="remember-me" onclick="if(this.checked){this.value = 1}else{this.value=0}" /><span class="toggleCheck no-check" id="repwd"></span>记住我</div>
+                    <input type="button" id="loginBtn" onclick="verSubmit()" value="登 录" class="loginBtn png" />
+                </div>
+            </form>
+            <div class="clear"></div>
+        </div>
+        <div class="loginBoxBot"></div>
+        <div class="bottomBox png">
+            <p>
+                <a href="#">关于我们</a><span></span><a href="#">联系我们</a><br />
+            </p>
+        </div>
+    </div>
+</div>
+<input th:value="${errorMsg}" id="errorMsg" type="hidden"/>
+</body>
+</html>

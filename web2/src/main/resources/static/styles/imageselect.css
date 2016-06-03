@@ -1,0 +1,5 @@
+.jqis{position: relative;}
+.jqis_header{background-image: url('/images/arrow.png');background-position: right center;background-repeat: no-repeat;cursor: pointer;}
+.jqis_header img{cursor: pointer;}
+.jqis_dropdown{padding: 5px;position: absolute;overflow-x: hidden;overflow-y: scroll;}
+.jqis_dropdown img{margin-right: 3px;cursor: pointer;float: left;}

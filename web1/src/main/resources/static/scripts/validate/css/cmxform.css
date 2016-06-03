@@ -1,0 +1,52 @@
+/**********************************
+
+Name: cmxform Styles
+
+***********************************/
+form.cmxform {
+	width: 370px;
+	font-size: 1.0em;
+	color: #333;
+}
+
+form.cmxform legend {
+	padding-left: 0;
+}
+
+form.cmxform legend, form.cmxform label {
+	color: #333;
+}
+
+form.cmxform fieldset {
+	border: none;
+	border-top: 1px solid #C9DCA6;
+	background: url(../../../images/cmxform-fieldset.gif) left bottom repeat-x;
+	background-color: #F8FDEF;
+}
+
+form.cmxform fieldset fieldset {
+	background: none;
+}
+
+form.cmxform fieldset p, form.cmxform fieldset fieldset {
+	padding: 5px 10px 7px;
+	background: url(../../../images/cmxform-divider.gif) left bottom repeat-x;
+}
+
+form.cmxform label.error, label.error {
+  background:url("../../../images/reg.gif") no-repeat 10px 0px;
+  padding-left: 32px;
+  padding-bottom: 2px;
+  font-size:12px;
+  color: #EA5200;
+}
+form.cmxform label.checked ,label.checked{
+  background:url("../../../images/reg.gif") no-repeat 10px -44px;
+}
+
+div.error { display: none; }
+input.checkbox { border: none }
+input:focus {/* border: 1px dotted black;*/ }
+input.error { border: 1px dotted red!important; }
+textarea.error { border: 1px dotted red!important; }
+form.cmxform .gray * { color: gray; }

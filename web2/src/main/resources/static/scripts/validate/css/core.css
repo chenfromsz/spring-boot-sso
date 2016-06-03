@@ -1,0 +1,32 @@
+#main { padding: 1em; }
+#banner { padding: 15px; background-color: #06b; color: white; font-size: large; border-bottom: 1px solid #ccc;
+    background: url(/images/bg.gif) repeat-x; text-align: center }
+#banner a { color: white; }
+.hi-tooltip {
+	position: absolute!important;
+	overflow:hidden;
+	font-size: 12px;
+	z-index: 10000!important;
+	width:206px;
+}
+.hi-tooltip .xtop, .hi-tooltip .xbottom { display: block; background: transparent; font-size: 1px; }
+.hi-tooltip .xb1, .hi-tooltip .xb2, .hi-tooltip .xb3, .tooltip .xb4 { display: block; overflow: hidden; }
+.hi-tooltip .xb1, .hi-tooltip .xb2, .hi-tooltip .xb3 { height: 1px; }
+.hi-tooltip .xb2, .hi-tooltip .xb3, .hi-tooltip .xb4 { background: #666; border-left: 1px solid #333; border-right: 1px solid #333; }
+.hi-tooltip .xbottom .xb2, .hi-tooltip .xbottom .xb3, .hi-tooltip .xbottom .xb4 { background: #666; }
+.hi-tooltip .xb1 { margin: 0 5px; background: #333; }
+.hi-tooltip .xb2 { margin: 0 3px; border-width: 0 2px; }
+.hi-tooltip .xb3 { margin: 0 2px; }
+.hi-tooltip .xb4 { height: 2px; margin: 0 1px; }
+
+.hi-tooltip .xboxcontent {
+	padding: 0 .5em;
+	margin: 0;
+	color: #000;
+	text-shadow: 2px 2px 0px #CCC;
+	word-wrap:break-word;
+	border: 1px solid #333;
+	border-width: 0px 1px 0 1px;
+	background-color: #666;
+
+}

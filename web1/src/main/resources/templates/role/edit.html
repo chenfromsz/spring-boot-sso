@@ -1,0 +1,25 @@
+<script th:src="@{/scripts/role/edit.js}"></script>
+<form id="saveForm" method="post">
+    <input type="hidden" name="id" id="id" th:value="${role.id}"/>
+<div class="addInfBtn" >
+    <h3 class="itemTit"><span>角色信息</span></h3>
+    <table class="addNewInfList">
+        <tr>
+            <th>名称</th>
+            <td width="240">
+                <input class="inp-list w-200 clear-mr f-left" type="text" th:value="${role.name}" id="name" name="name" maxlength="16" />
+                <span class="tipStar f-left">*</span>
+            </td>
+            <th>日期</th>
+            <td>
+                <input  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" type="text" class="inp-list w-200 clear-mr f-left" th:value="${role.createdate} ? ${#dates.format(role.createdate,'yyyy-MM-dd HH:mm:ss')} :''" id="createdate" name="createdate"/>
+            </td>
+        </tr>
+    </table>
+    <div class="bottomBtnBox">
+        <a class="btn-93X38 saveBtn" href="javascript:void(0)">确定</a>
+        <a class="btn-93X38 backBtn" href="javascript:closeDialog(0)">返回</a>
+    </div>
+</div>
+
+</form>

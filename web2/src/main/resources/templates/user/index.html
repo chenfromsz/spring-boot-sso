@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-store"/>
+    <meta http-equiv="Expires" content="0" />
+
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+    <title >首页</title>
+    <link th:href="@{/styles/global.css}"  rel="stylesheet" type="text/css"/>
+    <link th:href="@{/styles/index.css}" rel="stylesheet"  type="text/css"/>
+    <link th:href="@{/scripts/artDialog/default.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/My97DatePicker/skin/WdatePicker.css}" rel="stylesheet" type="text/css" />
+    <script th:src="@{/scripts/jquery.min.js}"></script>
+    <script th:src="@{/scripts/common.js}"></script>
+    <script th:src="@{/scripts/public/public.js}"></script>
+    <script th:src="@{/scripts/public/json2.js}"></script>
+    <script th:src="@{/scripts/artDialog/artDialog.js}" />
+    <script th:src="@{/scripts/My97DatePicker/WdatePicker.js}"></script>
+    <script th:src="@{/scripts/user/index.js}"></script>
+</head>
+<body>
+<div class="headerBox">
+    <div class="topBox">
+        <div class="topLogo f-left">
+            <a href="#"><img th:src="@{/images/logo.png}"/></a>
+        </div>
+        <div class="topUserInf f-right">
+            <span>欢迎您，<em th:text="${user.name}">用户（name）</em>！</span>
+            <a href="javascript:void(0)" id="logout">[退出]</a>
+        </div>
+        <div class="new-nav f-right">
+            <ul>
+                <li><a href="http://localhost:8081/">首页</a></li>
+                <li><a href="javascript:void(0)" id="searchBtn">用户信息</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div class="locationLine">
+    当前位置：首页->登录用户信息
+</div>
+<table class="globalMainBox" style="position:relative;z-index:1">
+    <tr>
+        <td valign="top">
+            <div class="content">
+                <table class="dataListTab">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>名称</th>
+                        <th>email</th>
+                        <th>部门</th>
+                        <th>日期</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbodyContent">
+                    </tbody>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+<form th:action="@{/logout}" method="post" id="logoutform">
+</form>
+<script type="text/javascript">
+    $(function () {
+        $("#logout").click(function () {
+            if (confirm('您确定退出吗？')) {
+                $("#logoutform").submit();
+            }
+        });
+    });
+</script>
+</body>
+</html>

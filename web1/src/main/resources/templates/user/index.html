@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="fragments/layout">
+<head>
+    <title>用户管理</title>
+
+    <link th:href="@{/scripts/pagination/pagination.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/artDialog/default.css}" rel="stylesheet" type="text/css" />
+    <link th:href="@{/scripts/My97DatePicker/skin/WdatePicker.css}" rel="stylesheet" type="text/css" />
+
+    <script th:src="@{/scripts/pagination/jquery.pagination.js}"></script>
+    <script th:src="@{/scripts/jquery.smartselect-1.1.min.js}"></script>
+    <script th:src="@{/scripts/artDialog/artDialog.js}" />
+    <script th:src="@{/scripts/My97DatePicker/WdatePicker.js}"></script>
+    <script th:src="@{/scripts/user/list.js}"></script>
+</head>
+<body>
+<div class="locationLine" layout:fragment="prompt">
+    当前位置：首页 &gt; <em >用户管理</em>
+</div>
+<div class="statisticBox w-782"  layout:fragment="content">
+    <form id="queryForm" method="get">
+    <div class="radiusGrayBox782">
+        <div class="radiusGrayTop782"></div>
+        <div class="radiusGrayMid782">
+            <div class="dataSearchBox forUserRadius">
+                <ul>
+                    <li>
+                        <label class="preInpTxt f-left">用&nbsp;户&nbsp;名&nbsp;</label>
+                        <input type="text" class="inp-list f-left w-200" value="" id="name" name="name"/>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="blueBtn-62X30 f-right" id="searchBtn">查询</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </form>
+    <div class="newBtnBox">
+        <a id="addUserInf" class="blueBtn-62X30" href="javascript:void(0)">新增</a>
+    </div>
+    <div class="dataDetailList mt-12">
+        <table class="dataListTab">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>名称</th>
+                <th>email</th>
+                <th>日期</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody id="tbodyContent">
+            </tbody>
+        </table>
+        <div class="tableFootLine">
+            <div class="pagebarList pagination"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>

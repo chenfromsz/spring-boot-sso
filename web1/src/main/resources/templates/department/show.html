@@ -1,0 +1,16 @@
+<div class="addInfBtn">
+    <h3 class="itemTit"><span>部门信息</span></h3>
+    <table class="addNewInfList">
+        <tr>
+            <th>名称</th>
+            <td width="240"><input class="inp-list w-200 clear-mr f-left" type="text" th:value="${department.name}" readonly="true"/></td>
+            <th>日期</th>
+            <td>
+                <input  onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" type="text" class="inp-list w-200 clear-mr f-left" th:value="${department.createdate} ? ${#dates.format(department.createdate,'yyyy-MM-dd HH:mm:ss')} :''" readonly="true"/>
+            </td>
+        </tr>
+    </table>
+    <div class="bottomBtnBox">
+        <a class="btn-93X38 backBtn" href="javascript:closeDialog(0)">返回</a>
+    </div>
+</div>

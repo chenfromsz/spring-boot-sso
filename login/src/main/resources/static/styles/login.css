@@ -1,0 +1,58 @@
+@charset "utf-8";
+html,body {margin:0px auto;min-height:100%;}
+*html{background-image:url(about:blank);background-attachment:fixed;}
+img {border:0;outline:none;}
+a{ text-decoration: none; color:#4a4a4a; outline:none;}
+a:hover{text-decoration:none; color:#666; outline:none;}
+body{font-family:"microsoft yahei";font-size:12px;line-height: 20px; color:#4a4a4a;}
+select,input{font-size: 12px;font-family:"microsoft yahei"; padding:0; margin:0;}
+input,button,select,textarea,
+ul,li,dl,dt,dd,h1,h2,h3,h4,h5,p,form,em,span{ margin:0; padding:0; list-style:none;outline:none;}
+table{ border:0; padding:0; margin:0;}
+em,i { font-style:normal}
+table {border-collapse: collapse;border-spacing: 0;}
+h1,h2,h3,h4,h5,h6 {font-size: 100%;}
+ul,ol,li {list-style: none;}
+img {border: none;}
+input,img {vertical-align: middle;}
+.hide{display:none;}
+.hidden{text-indent:-9999px;}
+.clear{clear:both;}
+
+body{width:100%;min-height:100%;background:#ecedee url(../images/login/bg.jpg) top center no-repeat;}
+.mainBox{width:80%;margin:0 auto;top:45px;min-height:600px;_height:620px;position:relative;}
+/* min-width */
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+	.mainBox{width:960px;margin:0 auto;top:45px;height:auto;position:relative;}
+}
+@media screen and (max-width: 800px){
+	.mainBox{width:960px;margin:0 auto;top:45px;height:auto;position:relative;}
+}
+.leftBox{width:361px;height:auto;position:absolute;right:0;top:130px;}
+.loginBoxTop{width:361px;height:14px;background:url(../images/login/login-bk-top.png) top left no-repeat;overflow:hidden;}
+.loginBox{width:361px;background:url(../images/login/login-bk-cen.png) top left repeat-y;padding-bottom:36px;}
+.loginBoxBot{width:361px;height:13px;position:relative;background:url(../images/login/login-bk-bot.png) top left no-repeat;overflow:hidden;}
+.loginTit{width:282px;height:43px;margin:28px 0 0 37px;float:left;background:url(../images/login/title.png) top left no-repeat;display:inline;}
+.infList{width:282px;height:auto;margin:26px 0 0 37px;float:left;display:inline;color:#999;}
+.infList li{width:100%;height:44px;margin:6px 0;float:left;position:relative;overflow:hidden;}
+.infList .grayBox{border:1px solid #d9d9d9;background-color:#FFF;}
+.infList .current{border-color:#ffb476;}
+.username-icon{display:inline-block;float:left;width:44px;height:42px;background:url(../images/login/useName-icon.png) 12px 11px no-repeat;_background-image:url(../images/login/useName-icon-8.png);}
+.username,.pwd{width:236px;float:left;margin:1px;height:42px;line-height:42px;border:none;background:none;color:#999;position:relative;}
+.pwd-icon{display:inline-block;float:left;width:44px;height:42px;background:url(../images/login/pwd-icon.png) 12px 9px no-repeat;_background-image:url(../images/login/pwd-icon-8.png);}
+.pwdTxt{position:absolute;_position:relative;top:0;_top:-44px;right:0;line-height:46px;text-indent:48px;width:282px;height:44px;_height:46px;background:url(../images/login/transformBk.png) top left repeat;_background-image:none;}
+.close{width:29px;height:29px;background:url(../images/login/close.png) top left no-repeat;position:absolute;right:6px;top:8px;cursor:pointer;}
+.checkCode{width:128px;height:42px;border:1px solid #d9d9d9;background:#FFF;text-align:center;line-height:44px;color:#999;}
+.codePic{width:80px;height:37px;margin:0 12px;}
+.getOther,.getOther:hover{color:#fa8c1b;text-decoration:underline;}
+.check-box{width:130px;float:left;}
+.loginBtnBox{width:282px;height:50px;line-height:50px;margin:16px 0 0 37px;display:inline;float:left;}
+.toggleCheck{display:inline-block;width:26px;height:26px;float:left;margin:12px 6px 0 0;background:url(../images/login/yesNoIcon.png) 0 0 no-repeat;}
+.no-check{background-position:0 0;}
+.is-check{background-position:0 -26px;}
+.loginBtn{border:none;cursor:pointer;background:url(../images/login/loginBtn.png) top left no-repeat;color:#FFF;font-size:24px;text-align:center;width:150px;height:54px;float:left;}
+
+.bottomBox{width:100%;height:70px;color:#666;text-align:center;}
+.bottomBox p{padding-top:16px;}
+.bottomBox p span{display:inline-block;height:12px;width:1px;overflow:hidden;background:url(../images/login/txt-line.png);margin:0 6px;position:relative;top:2px;*top:-2px;}
+.bottomBox a{color:#666;}
