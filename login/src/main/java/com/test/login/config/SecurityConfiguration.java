@@ -41,7 +41,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER)
                 .and().exceptionHandling().accessDeniedPage("/deny")
-                .and().rememberMe().tokenValiditySeconds(1209600).tokenRepository(tokenRepository());
+                .and().rememberMe().tokenValiditySeconds(86400).tokenRepository(tokenRepository());
     }
 
     @Bean
