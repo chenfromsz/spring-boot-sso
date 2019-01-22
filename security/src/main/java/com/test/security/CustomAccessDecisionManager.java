@@ -1,6 +1,7 @@
 package com.test.security;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.ConfigAttribute;
@@ -13,7 +14,7 @@ import java.util.Iterator;
 
 
 public class CustomAccessDecisionManager implements AccessDecisionManager {
-    private static final Logger logger = Logger.getLogger(CustomAccessDecisionManager.class);
+    private static final Logger logger = LoggerFactory.getLogger(CustomAccessDecisionManager.class);
 
     @Override
     public void decide(Authentication authentication, Object object,
@@ -23,7 +24,7 @@ public class CustomAccessDecisionManager implements AccessDecisionManager {
             return;
         }
 
-        //config urlroles
+        //configs urlroles
         Iterator<ConfigAttribute> iterator = configAttributes.iterator();
 
         while (iterator.hasNext()) {

@@ -3,7 +3,6 @@ package com.test.web2.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
-import java.util.List;
 
 
 public class User implements java.io.Serializable{

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"><html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="pragma" content="no-cache" />
@@ -35,8 +35,8 @@
         </div>
         <div class="new-nav f-right">
             <ul>
-                <li><a href="http://localhost:8081/">首页</a></li>
-                <li><a href="javascript:void(0)" id="searchBtn">用户信息</a></li>
+                <li><a href="http://localhost:8080/">首页</a></li>
+                <!--<li><a href="javascript:void(0)" id="searchBtn">用户信息</a></li>-->
             </ul>
         </div>
     </div>
@@ -57,9 +57,18 @@
                         <th>email</th>
                         <th>部门</th>
                         <th>日期</th>
+                        <th>操作</th>
                     </tr>
                     </thead>
                     <tbody id="tbodyContent">
+                    <tr th:each="user:${users}">
+                        <td th:text="${user.id}">ID</td>
+                        <td th:text="${user.name}">名称</td>
+                        <td th:text="${user.email}">email</td>
+                        <td th:text="${user.department}">部门</td>
+                        <td th:text="${user.createdate} ? ${#dates.format(user.createdate,'yyyy-MM-dd HH:mm:ss')} :''">日期</td>
+                        <td><a th:href="'javascript:showdetail('+${user.id}+');'">查看明细</a></td>
+                    </tr>
                     </tbody>
                 </table>
             </div>

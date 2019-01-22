@@ -30,7 +30,7 @@ public class JpaConfiguration {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/test?characterEncoding=utf8");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/mytest?characterEncoding=utf8&useSSL=false");
         dataSource.setUsername("root");
         dataSource.setPassword("12345678");
 
@@ -59,6 +59,7 @@ public class JpaConfiguration {
         hibernateProperties.setProperty("hibernate.format_sql", "true");
         hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
         hibernateProperties.setProperty("hibernate.generate_statistics", "false");
+        hibernateProperties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
         hibernateProperties.setProperty("javax.persistence.validation.mode", "none");
 
         //Audit History flags

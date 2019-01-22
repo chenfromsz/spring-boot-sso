@@ -2,6 +2,7 @@ package com.test.login.controller;
 
 import com.test.login.service.ImageCode;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,8 +32,9 @@ public class LoginController {
     }
 
     @RequestMapping("/")
-    public String home(){
-        return "index";
+    public String home(ModelMap model, Principal user){
+        model.addAttribute("user", user);
+        return "home";
     }
 
 
@@ -44,7 +46,7 @@ public class LoginController {
 
         String simpleCaptcha = "simpleCaptcha";
         request.getSession().setAttribute(simpleCaptcha, map.get("strEnsure").toString().toLowerCase());
-        request.getSession().setAttribute("codeTime",new Date().getTime());
+        request.getSession().setAttribute("codeTime",System.currentTimeMillis());
 
         try {
             ImageIO.write((BufferedImage) map.get("image"), "JPEG", os);

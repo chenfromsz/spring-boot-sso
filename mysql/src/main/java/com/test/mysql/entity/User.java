@@ -1,14 +1,14 @@
 package com.test.mysql.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
+@Table(name = "t_user")
 public class User implements java.io.Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,16 +20,15 @@ public class User implements java.io.Serializable{
     private Date createdate;
     private String password;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "did")
-    @JsonBackReference
     private Department department;
 
-    @ManyToMany(cascade = {}, fetch = FetchType.EAGER)
-    @JoinTable(name = "user_role",
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name = "t_user_role",
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "roles_id")})
-    private List<Role> roles;
+    private List<Role> roles = new ArrayList<>();
 
     public User() {
     }

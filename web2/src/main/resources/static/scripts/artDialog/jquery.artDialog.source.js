@@ -1130,7 +1130,7 @@ artDialog.dragEvent.prototype = {
 _use = function (event) {
 	var limit, startWidth, startHeight, startLeft, startTop, isResize,
 		api = artDialog.focus,
-		//config = api.config,
+		//configs = api.configs,
 		DOM = api.DOM,
 		wrap = DOM.wrap,
 		title = DOM.title,

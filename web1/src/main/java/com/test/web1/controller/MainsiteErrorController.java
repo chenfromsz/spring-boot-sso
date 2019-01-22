@@ -1,6 +1,6 @@
 package com.test.web1.controller;
 
-import org.springframework.boot.autoconfigure.web.ErrorController;
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,12 +36,6 @@ public class MainsiteErrorController implements ErrorController {
     @RequestMapping("/login")
     public String login() {
         return "redirect:/#/";
-    }
-
-    @RequestMapping("/")
-    public String index(ModelMap model, Principal user) throws Exception{
-        model.addAttribute("user", user);
-        return "home";
     }
 
 }

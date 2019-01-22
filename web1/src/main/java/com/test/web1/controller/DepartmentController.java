@@ -2,7 +2,7 @@ package com.test.web1.controller;
 
 import com.test.mysql.entity.Department;
 import com.test.mysql.model.DepartmentQo;
-import com.test.mysql.repository.DepartmentRepository;
+import com.test.mysql.services.DepartmentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ public class DepartmentController {
     private static Logger logger = LoggerFactory.getLogger(DepartmentController.class);
 
     @Autowired
-    private DepartmentRepository departmentRepository;
+    private DepartmentService departmentService;
 
     @RequestMapping("/index")
     public String index(ModelMap model, Principal user) throws Exception{
@@ -35,7 +35,7 @@ public class DepartmentController {
 
     @RequestMapping(value="/{id}")
     public String show(ModelMap model,@PathVariable Long id) {
-        Department department = departmentRepository.findOne(id);
+        Department department = departmentService.findOne(id);
         model.addAttribute("department",department);
         return "department/show";
     }
@@ -44,8 +44,8 @@ public class DepartmentController {
     @ResponseBody
     public Page<Department> getList(DepartmentQo departmentQo) {
         try {
-            Pageable pageable = new PageRequest(departmentQo.getPage(), departmentQo.getSize(), new Sort(Sort.Direction.ASC, "id"));
-            return departmentRepository.findByName(departmentQo.getName()==null?"%":"%"+departmentQo.getName()+"%", pageable);
+            Pageable pageable = PageRequest.of(departmentQo.getPage(), departmentQo.getSize(), Sort.by(Sort.Direction.ASC, "id"));
+            return departmentService.findAll(departmentQo, pageable);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -60,14 +60,14 @@ public class DepartmentController {
     @RequestMapping(value="/save", method = RequestMethod.POST)
     @ResponseBody
     public String save(Department department) throws Exception{
-        departmentRepository.save(department);
+        departmentService.save(department);
         logger.info("新增->ID="+department.getId());
         return "1";
     }
 
     @RequestMapping(value="/edit/{id}")
     public String update(ModelMap model,@PathVariable Long id){
-        Department department = departmentRepository.findOne(id);
+        Department department = departmentService.findOne(id);
         model.addAttribute("department",department);
         return "department/edit";
     }
@@ -75,7 +75,7 @@ public class DepartmentController {
     @RequestMapping(method = RequestMethod.POST, value="/update")
     @ResponseBody
     public String update(Department department) throws Exception{
-        departmentRepository.save(department);
+        departmentService.save(department);
         logger.info("修改->ID="+department.getId());
         return "1";
     }
@@ -83,7 +83,7 @@ public class DepartmentController {
     @RequestMapping(value="/delete/{id}",method = RequestMethod.GET)
     @ResponseBody
     public String delete(@PathVariable Long id) throws Exception{
-        departmentRepository.delete(id);
+        departmentService.delete(id);
         logger.info("删除->ID="+id);
         return "1";
     }

@@ -1,6 +1,7 @@
 package com.test.security;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.web.FilterInvocation;
@@ -11,7 +12,7 @@ import org.springframework.util.PathMatcher;
 import java.util.*;
 
 public class CustomSecurityMetadataSource implements FilterInvocationSecurityMetadataSource{
-    private static final Logger logger = Logger.getLogger(CustomSecurityMetadataSource .class);
+    private static final Logger logger = LoggerFactory.getLogger(CustomSecurityMetadataSource .class);
 
     private Map<String, Collection<ConfigAttribute>> resourceMap = null;
     private PathMatcher pathMatcher = new AntPathMatcher();

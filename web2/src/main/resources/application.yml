@@ -4,20 +4,16 @@ server:
     uri-encoding: UTF-8
 
 security:
-  ignored: /favicon.ico,/scripts/**,/styles/**,/images/**
-  sessions: ALWAYS
   oauth2:
-      sso:
-        loginPath: /login
-      client:
-        clientId: ssoclient
-        clientSecret: ssosecret
-        accessTokenUri: http://localhost/oauth/token
-        userAuthorizationUri: http://localhost/oauth/authorize
-        clientAuthenticationScheme: form
-      resource:
-        jwt:
-          keyUri: http://localhost/oauth/token_key
+    client:
+      client-id: ssoclient
+      client-secret: ssosecret
+      access-token-uri: http://localhost:8080/oauth/token
+      user-authorization-uri: http://localhost:8080/oauth/authorize
+    resource:
+      token-info-uri: http://localhost:8080/oauth/check_token
+      jwt:
+        key-uri: http://localhost:8080/oauth/token_key
 
 securityconfig:
   logoutsuccssurl: /tosignout
@@ -27,10 +23,4 @@ securityconfig:
             /**/edit/** = admin,editor;
             /**/delete/** = admin
 
-zuul:
-  routes:
-    resource:
-      path: /resource/**
-      url: http://localhost:8083
-      stripPrefix: true
-      retryable:
+

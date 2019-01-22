@@ -1,6 +1,7 @@
 package com.test.security;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.access.SecurityMetadataSource;
 import org.springframework.security.access.intercept.AbstractSecurityInterceptor;
 import org.springframework.security.access.intercept.InterceptorStatusToken;
@@ -11,7 +12,8 @@ import javax.servlet.*;
 import java.io.IOException;
 
 public class CustomFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter {
-    private static final Logger logger = Logger.getLogger(CustomFilterSecurityInterceptor.class);
+    private static final Logger logger = LoggerFactory.getLogger(CustomFilterSecurityInterceptor.class);
+
     private FilterInvocationSecurityMetadataSource securityMetadataSource;
 
     @Override
