@@ -5,5 +5,5 @@
 5. run com.test.resource.ResourceApplication
 6. run com.test.web1.Web1Application
 7. run com.test.web2.Web2Application
-8. http://localhost
+8. http://localhost:8080
 9. login username and passwork: user
